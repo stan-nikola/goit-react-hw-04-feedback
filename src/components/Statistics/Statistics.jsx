@@ -1,21 +1,44 @@
 import PropTypes from 'prop-types';
 
 import { Notification } from 'components/Notification/Notification';
+import { Box } from 'components/Box/Box';
+import { StatItems } from './Statistics.styled';
 
 export const Statistics = ({ statOptions, total, positivePercentage }) => {
   const { good, neutral, bad } = statOptions;
   return (
     <>
       {total() > 0 ? (
-        <ul>
-          <li>Good:{good}</li>
-          <li>Neutral:{neutral}</li>
-          <li>Bad:{bad} </li>
-          <li>Total:{total()} </li>
-          <li>Positive feedback:{positivePercentage()}%</li>
-        </ul>
+        <Box
+          as="ul"
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          gridGap={2}
+        >
+          <li>
+            <StatItems>Good:</StatItems>
+            {good}
+          </li>
+          <li>
+            <StatItems>Neutral:</StatItems>
+            {neutral}
+          </li>
+          <li>
+            <StatItems>Bad:</StatItems>
+            {bad}{' '}
+          </li>
+          <li>
+            <StatItems>Total:</StatItems>
+            {total()}{' '}
+          </li>
+          <li>
+            <StatItems>Positive feedback:</StatItems>
+            {positivePercentage()}%
+          </li>
+        </Box>
       ) : (
-        <Notification title="No feedback given" />
+        <Notification title="There is no feedback" />
       )}
     </>
   );

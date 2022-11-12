@@ -1,7 +1,9 @@
 import { Component } from 'react';
+
 import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions ';
 import { Section } from '../Section/Section';
 import { Statistics } from '../Statistics/Statistics';
+import { Box } from 'components/Box/Box';
 
 export class App extends Component {
   state = {
@@ -30,7 +32,18 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <Box
+        as="main"
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        mt={50}
+        mx="auto"
+        p={15}
+        maxWidth={400}
+        borderRadius="normal"
+        bg="primary"
+      >
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={this.state}
@@ -44,7 +57,7 @@ export class App extends Component {
             positivePercentage={this.countPositiveFeedbackPercentage}
           />
         </Section>
-      </div>
+      </Box>
     );
   }
 }

@@ -43,6 +43,7 @@ export class App extends Component {
         maxWidth={400}
         borderRadius="normal"
         bg="primary"
+        boxShadow="items"
       >
         <Section title="Please leave feedback">
           <FeedbackOptions

@@ -20,9 +20,9 @@ export const FeedbackOptions = ({
         type={type}
         onClick={() => onLeaveFeedback(btnLabel)}
       >
-        {(btnLabel === 'good' && <BsFillEmojiSmileFill fill="#07b447" />) ||
+        {(btnLabel === 'good' && <BsFillEmojiSmileFill fill="#07ff62" />) ||
           (btnLabel === 'neutral' && (
-            <BsFillEmojiNeutralFill fill="#c7c704" />
+            <BsFillEmojiNeutralFill fill="#ffff07" />
           )) ||
           (btnLabel === 'bad' && <BsFillEmojiFrownFill fill="#ff0000" />)}
       </Button>

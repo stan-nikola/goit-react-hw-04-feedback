@@ -13,7 +13,7 @@ export const Button = styled.button`
     transition: scale 250ms linear, box-shadow 250ms linear;
     &:hover,
     &:focus {
-      scale: 1.03;
+      scale: 1.05;
       box-shadow: ${p => p.theme.shadows.items};
     }
   }

@@ -10,25 +10,32 @@ import { Button } from './FeedbackOptions.styled';
 export const FeedbackOptions = ({
   options,
   type = 'button',
-
   onLeaveFeedback,
-}) => (
-  <Box display="flex" alignItems="center" justifyContent="space-evenly" my={4}>
-    {Object.keys(options).map(btnLabel => (
-      <Button
-        key={btnLabel}
-        type={type}
-        onClick={() => onLeaveFeedback(btnLabel)}
-      >
-        {(btnLabel === 'good' && <BsFillEmojiSmileFill fill="#07ff62" />) ||
-          (btnLabel === 'neutral' && (
-            <BsFillEmojiNeutralFill fill="#ffff07" />
-          )) ||
-          (btnLabel === 'bad' && <BsFillEmojiFrownFill fill="#ff0000" />)}
-      </Button>
-    ))}
-  </Box>
-);
+}) => {
+  return (
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="space-evenly"
+      my={4}
+    >
+      {Object.keys(options).map(btnLabel => (
+        <Button
+          key={btnLabel}
+          type={type}
+          onClick={() => onLeaveFeedback(btnLabel)}
+        >
+          {(btnLabel === 'good' && <BsFillEmojiSmileFill fill="#07ff62" />) ||
+            (btnLabel === 'neutral' && (
+              <BsFillEmojiNeutralFill fill="#ffff07" />
+            )) ||
+            (btnLabel === 'bad' && <BsFillEmojiFrownFill fill="#ff0000" />)}
+        </Button>
+      ))}
+    </Box>
+  );
+};
+
 FeedbackOptions.propTypes = {
   options: PropTypes.shape({
     good: PropTypes.number.isRequired,

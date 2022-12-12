@@ -4,8 +4,11 @@ import { Notification } from 'components/Notification/Notification';
 import { Box } from 'components/Box/Box';
 import { StatItems } from './Statistics.styled';
 
-export const Statistics = ({ statOptions, total, positivePercentage }) => {
-  const { good, neutral, bad } = statOptions;
+export const Statistics = ({
+  statOptions: { good, neutral, bad },
+  total,
+  positivePercentage,
+}) => {
   return (
     <>
       {total() > 0 ? (
@@ -26,11 +29,11 @@ export const Statistics = ({ statOptions, total, positivePercentage }) => {
           </li>
           <li>
             <StatItems>Bad:</StatItems>
-            {bad}{' '}
+            {bad}
           </li>
           <li>
             <StatItems>Total:</StatItems>
-            {total()}{' '}
+            {total()}
           </li>
           <li>
             <StatItems>Positive feedback:</StatItems>
